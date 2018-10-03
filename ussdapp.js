@@ -1,23 +1,30 @@
 
+//Import XML parser
 var parseString = require('xml2js').parseString;
+//Import JSON parser
 var js2xmlparser = require("js2xmlparser");
 
+
+//XML string file
 var xml = `<ussd>USSD APP<option1>1</option1>
         <option2>2</option2>
         </ussd>`
 
 var xml2 = "<testThis>Hello Im here</testThis>"
 
-          
+//Convert From JSON OBject to XML and display result   
 parseString(xml, function (err, result) {
     console.log(result);
 });
-var obj = {
-  "firstName": "John",
-  "lastName": "Smith",
-  "dateOfBirth": new Date(1964, 7, 26)
+
+
+let obj = {
+  "fName": "Kat",
+  "lName": "Ratau",
+  "dOb": new Date(1980, 7, 26)
 }
   
 
-console.log(js2xmlparser.parse("person", xml));
+//Convert From JSON OBject to XML and display result
+
 console.log(js2xmlparser.parse("person", obj));
